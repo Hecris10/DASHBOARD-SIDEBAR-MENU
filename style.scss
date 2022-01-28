@@ -1,0 +1,205 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+* {
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//colors@at-root
+$body-color: #E4E9F7;
+$sidebar-color: #FFF;
+$primary-color: #695CFE;
+$primary-color-light: #F6F5FF;
+$toggle-color: #DDD;
+$text-color: #707070;
+//transition
+$tran-02: all 0.2s ease;
+$tran-03: all 0.3s ease;
+$tran-04: all 0.4s ease;
+$tran-05: all 0.5s ease;
+///////////////////
+body {
+    height: 100vh;
+    background-color: $body-color;
+}
+
+/////////////REUSABLE CSS ////////////
+.sidebar {
+    header {
+        .image-text {
+            .text {
+                font-size: 16px;
+                font-weight: 500;
+                color: $text-color;
+            }
+            .image {
+                width: 60px;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
+
+////////// SIDEBAR //////////////////
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background-color: $sidebar-color;
+    header {
+        position: relative;
+        .image-text {
+            display: flex;
+            align-items: center;
+            img {
+                width: 40px;
+                border-radius: 6px;
+            }
+            .header-text {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        .toggle {
+            position: absolute;
+            top: 50%;
+            right: -25px;
+            transform: translateY(-50%);
+            height: 25px;
+            width: 25px;
+            background-color: $primary-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: $sidebar-color;
+            font-size: 22px;
+        }
+    }
+    .search-box {
+        background-color: $primary-color-light;
+        input {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 6px;
+            background-color: $primary-color-light;
+        }
+    }
+}
+
+.sidebar {
+    li {
+        height: 50px;
+        margin-top: 10px;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        .icon {
+            min-width: 60px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $text-color;
+        }
+        .text {
+            color: $text-color;
+        }
+        a {
+            height: 100%;
+            display: flex;
+            width: 100%;
+            border-radius: 6px;
+            align-items: center;
+            text-decoration: none;
+            transition: $tran-04;
+            &:hover {
+                background-color: $primary-color;
+                .icon,
+                .text {
+                    color: $sidebar-color;
+                    transition: $tran-02;
+                }
+            }
+        }
+    }
+}
+
+.navbar .search-box {
+    background-color: red;
+}
+
+.header-text {
+    .name {
+        font-weight: 600;
+    }
+    .profession {
+        margin-top: -2px;
+    }
+}
+
+.sidebar .menu-bar {
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .mode {
+        background: $primary-color-light;
+        .moon-sun {
+            height: 50px;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            i {
+                position: absolute;
+            }
+            i.sun {
+                opacity: 0;
+            }
+        }
+        ///creating bottom - button
+        .toggle-switch {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            min-width: 60px;
+            cursor: pointer;
+            .switch {
+                position: relative;
+                height: 22px;
+                width: 44px;
+                border-radius: 25px;
+                background: $toggle-color;
+                &::before {
+                    content: ' ';
+                    position: absolute;
+                    height: 15px;
+                    width: 15px;
+                    border-radius: 50%;
+                    top: 50%;
+                    left: 5px;
+                    transform: translateY(-50%);
+                    background: $sidebar-color;
+                    transition: $tran-04;
+                }
+            }
+        }
+    }
+}
+
+/////////dark theme
+body.dark {
+    .switch::before {
+        left: 20px;
+    }
+}
