@@ -8,15 +8,33 @@
           box-sizing: border-box;
 }
 
+:root {
+  --body-color: #E4E9F7;
+  --sidebar-color: #FFF;
+  --primary-color: #695CFE;
+  --primary-color-light: #F6F5FF;
+  --toggle-color: #DDD;
+  --text-color: #707070;
+}
+
 body {
   height: 100vh;
-  background-color: #E4E9F7;
+  background-color: var(--body-color);
+}
+
+body.dark {
+  --body-color: #18191A;
+  --sidebar-color: #242526;
+  --primary-color: #3A3B3C;
+  --primary-color-light: #3A3B3C;
+  --toggle-color: #FFF;
+  --text-color: #CCC;
 }
 
 .sidebar header .image-text .text {
   font-size: 16px;
   font-weight: 500;
-  color: #707070;
+  color: var(--text-color);
 }
 
 .sidebar header .image-text .image {
@@ -36,7 +54,7 @@ body {
   height: 100%;
   width: 250px;
   padding: 10px 14px;
-  background-color: #FFF;
+  background-color: var(--sidebar-color);
 }
 
 .sidebar header {
@@ -75,7 +93,7 @@ body {
           transform: translateY(-50%);
   height: 25px;
   width: 25px;
-  background-color: #695CFE;
+  background-color: var(--primary-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,12 +104,12 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 50%;
-  color: #FFF;
+  color: var(--sidebar-color);
   font-size: 22px;
 }
 
 .sidebar .search-box {
-  background-color: #F6F5FF;
+  background-color: var(--primary-color-light);
 }
 
 .sidebar .search-box input {
@@ -100,7 +118,7 @@ body {
   outline: none;
   border: none;
   border-radius: 6px;
-  background-color: #F6F5FF;
+  background-color: var(--primary-color-light);
 }
 
 .sidebar li {
@@ -127,11 +145,11 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #707070;
+  color: var(--text-color);
 }
 
 .sidebar li .text {
-  color: #707070;
+  color: var(--text-color);
 }
 
 .sidebar li a {
@@ -150,18 +168,14 @@ body {
 }
 
 .sidebar li a:hover {
-  background-color: #695CFE;
+  background-color: var(--primary-color);
 }
 
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text {
-  color: #FFF;
+  color: var(--sidebar-color);
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-}
-
-.navbar .search-box {
-  background-color: red;
 }
 
 .header-text .name {
@@ -187,7 +201,7 @@ body {
 }
 
 .sidebar .menu-bar .mode {
-  background: #F6F5FF;
+  background: var(--primary-color-light);
 }
 
 .sidebar .menu-bar .mode .moon-sun {
@@ -229,10 +243,10 @@ body {
   height: 22px;
   width: 44px;
   border-radius: 25px;
-  background: #DDD;
+  background: var(--toggle-color);
 }
 
-.sidebar .menu-bar .mode .toggle-switch .switch::before {
+.switch::before {
   content: ' ';
   position: absolute;
   height: 15px;
@@ -242,12 +256,12 @@ body {
   left: 5px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background: #FFF;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  background: var(--sidebar-color);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 body.dark .switch::before {
-  left: 20px;
+  left: 25px;
 }
 /*# sourceMappingURL=style.css.map */
