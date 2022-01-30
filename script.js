@@ -1,9 +1,13 @@
 const body = document.querySelector("body"),
-    sidebar = document.querySelector("sidebar"),
-    toggle = document.querySelector(".toggle"),
-    search = document.querySelector(".search-box"),
-    modeSwitch = document.querySelector(".mode"),
-    modeText = document.querySelector(".mode-text");
+    sidebar = body.querySelector(".sidebar"),
+    toggle = body.querySelector(".toggle"),
+    search = body.querySelector(".search-box"),
+    modeSwitch = body.querySelector(".mode"),
+    modeText = body.querySelector(".mode-text");
+
+    toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close")
+});
 
 modeSwitch.addEventListener("click", () => {
     body.classList.toggle("dark")

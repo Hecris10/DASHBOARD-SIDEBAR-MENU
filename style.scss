@@ -26,6 +26,7 @@ $tran-05: all 0.5s ease;
 body {
     height: 100vh;
     background-color: var(--body-color);
+    transition: $tran-02;
 }
 body.dark{
     --body-color: #18191A;
@@ -63,6 +64,7 @@ body.dark{
     width: 250px;
     padding: 10px 14px;
     background-color: var(--sidebar-color);
+    transition: $tran-03;
     header {
         position: relative;
         .image-text {
@@ -123,6 +125,9 @@ body.dark{
         }
         .text {
             color: var(--text-color);
+            transition: $tran-03;
+            white-space: nowrap;
+            opacity: 1;
         }
         a {
             height: 100%;
@@ -163,7 +168,10 @@ body.dark{
     flex-direction: column;
     justify-content: space-between;
     .mode {
+        position: relative;
+        border-radius: 6px;
         background: var(--primary-color-light);
+        
         .moon-sun {
             height: 50px;
             width: 60px;
@@ -178,8 +186,10 @@ body.dark{
         }
         ///creating bottom - button
         .toggle-switch {
+            position: absolute;
             display: flex;
             height: 100%;
+            right: 0;
             align-items: center;
             justify-content: center;
             min-width: 60px;
@@ -215,4 +225,26 @@ body.dark {
         left: 25px;
     }
 
+}
+
+/// close sidebar
+.sidebar.close{
+    width: 88px;
+    transition: $tran-03;
+    .text{
+        opacity: 0;
+    }
+}
+
+.menu-bar .mode .toggle-switch{
+    position: absolute;
+}
+
+.sidebar.close header .toggle{
+    transform: translateY(-50%) rotate(180deg);
+    transition: $tran-04;
+}
+.sidebar header .toggle{
+    
+    transition: $tran-04;
 }

@@ -20,6 +20,8 @@
 body {
   height: 100vh;
   background-color: var(--body-color);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 body.dark {
@@ -55,6 +57,8 @@ body.dark {
   width: 250px;
   padding: 10px 14px;
   background-color: var(--sidebar-color);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .sidebar header {
@@ -150,6 +154,10 @@ body.dark {
 
 .sidebar li .text {
   color: var(--text-color);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  opacity: 1;
 }
 
 .sidebar li a {
@@ -201,6 +209,8 @@ body.dark {
 }
 
 .sidebar .menu-bar .mode {
+  position: relative;
+  border-radius: 6px;
   background: var(--primary-color-light);
 }
 
@@ -224,10 +234,12 @@ body.dark {
 }
 
 .sidebar .menu-bar .mode .toggle-switch {
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 100%;
+  right: 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -263,5 +275,31 @@ body.dark {
 
 body.dark .switch::before {
   left: 25px;
+}
+
+.sidebar.close {
+  width: 88px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.sidebar.close .text {
+  opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+  position: absolute;
+}
+
+.sidebar.close header .toggle {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.sidebar header .toggle {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 /*# sourceMappingURL=style.css.map */
